@@ -9,6 +9,10 @@ const TitleScreen = ({ navigation }) => {
         title="TestScreenへ移動"
         onPress={() => navigation.navigate('TestScreen')}
       />
+      <Button
+        title="ウニ"
+        onPress={() => navigation.navigate('UniScreen')}
+      />
     </View>
   );
 };
