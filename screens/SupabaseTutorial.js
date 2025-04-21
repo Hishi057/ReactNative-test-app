@@ -6,6 +6,7 @@ const SupabaseTutorial = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Title title='Supabaseチュートリアル'/>
+      <Text>共有メモ帳</Text>
     </View>
   );
 };
