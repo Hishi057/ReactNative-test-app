@@ -73,3 +73,7 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+#supabase
+NEXT_PUBLIC_SUPABASE_URL=123
+NEXT_PUBLIC_SUPABASE_ANON_KEY=123
