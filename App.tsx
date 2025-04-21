@@ -15,7 +15,7 @@ export default function App(){
       <Stack.Navigator initialRouteName="TitleScreen">
         <Stack.Screen name="TitleScreen" component={TitleScreen}/>
         <Stack.Screen name="TestScreen" component={TestScreen}/>
-        <Stack.Screen name="UniScreen" component={UniScreen}/>
+        <Stack.Screen name="UniScreen" component={UniScreen} options={{headerShown : false, animation: 'slide_from_bottom'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

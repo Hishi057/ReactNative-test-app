@@ -6,13 +6,20 @@ import {
   Button,
   Alert,
   TouchableOpacity,
-  TextInput
+  TextInput,
+  FlatList
 } from 'react-native';
 import CircleButton from '../components/CircleButton';
+
 
 const TestScreen = ( {navigation} ) =>{
     const [count, setCount] = useState(100);
     const [text, setText] = useState('');
+    const [data, setData] = useState([
+      {id: '1', title:'りんご'},
+      {id: '2', title:'みかん'},
+      {id: '3', title:'バナナ'}
+    ]);
     
       return (
         <View style={styles.container}>
@@ -37,10 +44,28 @@ const TestScreen = ( {navigation} ) =>{
           <TextInput
             placeholder = "ここに入力してください"
             value={text}
-            onChangeText={(newText) => setText(newText)}
+            onChangeText={(newText) => 
+              setText(newText)
+            }
           />
-          <Text>{text}</Text>
-    
+          <Text>{text} を追加しました</Text>
+
+          <Button
+          title="Button"
+          onPress={() =>
+            setData([...data, {id: (data.length + 1)+1, title: text}])
+          }></Button>
+
+          <FlatList
+            data={data}
+            renderItem={({item}) => (
+              <View>
+                <Text>{item.title}</Text>
+              </View>
+            )}
+            ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: '#ccc' }} />}
+            keyExtractor={(item) => item.id}
+          />
         </View>
       );
     };
