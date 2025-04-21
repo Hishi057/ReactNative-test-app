@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import Title from '../components/Title'
 
 const TitleScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>これはホーム画面です！</Text>
+      <Title title='タイトル画面'/>
+
       <Button
         title="TestScreenへ移動"
         onPress={() => navigation.navigate('TestScreen')}

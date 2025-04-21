@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   TextInput
 } from 'react-native';
+import CircleButton from '../components/CircleButton';
 
 const TestScreen = ( {navigation} ) =>{
     const [count, setCount] = useState(100);
@@ -23,6 +24,10 @@ const TestScreen = ( {navigation} ) =>{
             title="Button"
             onPress={() => setCount(count+1)}
           ></Button>
+          <View style={[{flexDirection: 'row'}]}>
+            <CircleButton onPress={() => setCount(count+1) } radius={50} label="" />
+            <CircleButton onPress={() => setCount(count+3) } radius={50} label="" />
+          </View>
     
           <TouchableOpacity style={styles.button} onPress={showAlert}>
             <Text style={styles.buttonText}>Custom Button</Text>
