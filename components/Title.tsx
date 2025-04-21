@@ -3,19 +3,19 @@ import { View, Text, StyleSheet} from 'react-native';
 
 type Props = {
     title: string;
+    fontSize?: number;
 };
 
-const Title = ({ title }: Props) => {
+const Title = ({ title, fontSize}: Props) => {
     return (
         <View>
-            <Text style={styles.text}>{title}</Text>
+            <Text style={[styles.text, {fontSize: (fontSize ?? 30)}]}>{title}</Text>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     text: {
-        fontSize: 60
     }
 });
 

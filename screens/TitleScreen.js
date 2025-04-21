@@ -15,6 +15,10 @@ const TitleScreen = ({ navigation }) => {
         title="ウニ"
         onPress={() => navigation.navigate('UniScreen')}
       />
+      <Button
+        title="Supabase"
+        onPress={() => navigation.navigate('SupabaseTutorial')}
+      />
     </View>
   );
 };
