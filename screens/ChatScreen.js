@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react';
 import { View, Text, Button, StyleSheet, TextInput, FlatList} from 'react-native';
 import Title from '../components/Title'
 import {supabase} from '../lib/supabase'
+import InputField from '../components/InputField'
 
 const MESSAGE_LIMIT = 10;
 
-const SupabaseTutorial = ({ navigation }) => {
+const ChatScreen = ({ navigation }) => {
     const [sendMessage, setSendMessage] = useState('test');
     const [myNickName, setmyNickName] = useState('');
     const [messages, setMessages] = useState([]);
@@ -58,8 +59,7 @@ const SupabaseTutorial = ({ navigation }) => {
 
       <View style={{flexDirection: 'row'}}>
         <Text>NAME: </Text>
-        <TextInput
-        style= {styles.input}
+        <InputField
         placeholder='Input Your Name'
         value= {myNickName}
         onChangeText={(newText) => setmyNickName(newText)}
@@ -68,9 +68,8 @@ const SupabaseTutorial = ({ navigation }) => {
 
       <View style = {{height: 1, backgroundColor: '#ccc', width: '90%', marginVertical: 10}}/>
 
-      <TextInput
-      style = {styles.input}
-      placeholder = 'Here text'
+      <InputField 
+      placeholder='Here Text'
       value={sendMessage}
       onChangeText={(newText) => setSendMessage(newText)}
       />
@@ -106,4 +105,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SupabaseTutorial;
+export default ChatScreen;
